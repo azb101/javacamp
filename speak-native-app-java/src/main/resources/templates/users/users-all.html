@@ -1,0 +1,12 @@
+    <a th:href="@{/users/new}">Add new</a>
+    <br/>
+    <table border="1">
+        <tr th:each="user,iter: ${users}">
+            <td th:text="${iter.index+1}" />
+            <td th:text="${user.id}" />
+            <td th:text="${user.email}" />
+            <td>
+                <a th:href="|@{/users/delete/{id}(id=${user.id})}|"> delete </a>
+            </td>
+        </tr>
+    </table>
